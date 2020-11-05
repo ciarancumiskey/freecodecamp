@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<style type='text/scss'>
+		@mixin border-radius($radius){
+			-webkit-border-radius: $radius;
+			-moz-border-radius: $radius;
+			-ms-border-radius: $radius;
+			border-radius: $radius;
+		}
+	  
+		@mixin border-stroke($val){
+			@if $val == light {
+			  border: 1px solid black;
+			}
+			@else if $val == medium {
+			  border: 3px solid black;
+			}
+			@else if $val == heavy {
+			  border: 6px solid black;
+			}
+			@else {
+			  border: none;
+			}
+		}
+		#mixin-test {
+			width: 150px;
+			height: 150px;
+			background-color: green;
+			@include border-radius(15px);
+			@include border-stroke(light);
+		}
+	</style>
+	<head>
+		<title>Mixin Test</title>
+	</head>
+	<body>
+		<div id="mixin-test"></div>
+	</body>
+</html>
